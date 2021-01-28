@@ -1,0 +1,39 @@
+<footer>
+  <div class="container">
+    <div class="footer-navigation">
+      {{ $rssPage := .OutputFormats.Get "rss" }}
+
+      {{ range .Site.Menus.footer }}
+        {{ if eq .Name "rss" }}
+          {{ if $rssPage }}
+            <a href="{{ $rssPage.Permalink }}">
+              {{ partial "svg" .Name }}
+            </a>
+          {{ else }}
+            <a href="{{ "blog/index.xml" | absLangURL }}">
+              {{ partial "svg" .Name }}
+            </a>
+          {{ end }}
+        {{ else }}
+          <a href="{{ .URL | absLangURL }}">
+            {{ partial "svg" .Name }}
+          </a>
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
+
+  {{ if .Site.Copyright }}
+    <p>{{ .Site.Copyright }}</p>
+  {{ end }}
+
+  <p class="made-with-love">
+    <a href="https://github.com/humrochagf/colordrop">
+      <b>Colordrop</b>
+    </a>
+
+    <span>theme | Made with</span>&nbsp;{{ partial "svg" "heart" }}&nbsp;<span>by</span>
+
+    <a href="https://humberto.io/"><b>Humberto Rocha</b></a>
+  </p>
+</footer>

@@ -1,0 +1,42 @@
+p code {
+  padding: 2px 2px;
+  border-radius: 2px;
+  color: #e83e8c;
+  background-color: #f3f3f3;
+}
+
+pre {
+  overflow: auto;
+  padding: 5px 10px 6px;
+  color:#f8f8f2;
+  background-color:#272822;
+}
+
+.highlight {
+  margin-bottom: 20px;
+
+  pre {
+    overflow: auto;
+    padding: 5px 0 6px;
+    margin: 0;
+  }
+
+  & > pre {
+    padding: 5px 10px 6px;
+
+    code {
+      display: inline-block;
+      padding-right: 10px;
+    }
+  }
+
+ td:last-child {
+    width: 100%;
+
+    code {
+      display: inline-block;
+      padding-right: 10px;
+      min-width: 100%;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{{ define "jsonLD" }}
+  <script type="application/ld+json">
+    {{ partial "person-jsonld" . | safeJS }}
+  </script>
+{{ end }}
+
+{{ define "main" }}
+  <article class="single">
+    <h1>{{ .Title }}</h1>
+
+    {{ .Content }}
+  </article>
+{{ end }}

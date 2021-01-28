@@ -1,0 +1,26 @@
+{
+  "@context": "http://schema.org",
+  "@type": "Blog",
+  "url": "{{ .Permalink }}",
+  "headline": "{{ .Title }} - {{ .Site.Title }}",
+  "description": "{{ .Site.Params.description }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ .Site.Author.name }}",
+    {{ with .Site.GetPage "/curriculum" }}
+      "url": "{{ .Permalink }}"
+    {{ end }}
+  },
+  "blogPost": [
+    {{ range $index, $page := .Pages }}
+      {{ if $index }},{{ end }}
+      {
+        "@type": "BlogPosting",
+        "headline": "{{ $page.Title }}",
+        "url": "{{ $page.Permalink }}",
+        "datePublished": "{{ $page.PublishDate.Format "2006-01-02" }}",
+        "description": "{{ $page.Description }}"
+      }
+    {{ end }}
+  ]
+}

@@ -1,0 +1,44 @@
+- id: publish 
+  translation: Published on
+
+- id: license1
+  translation: Creative Commons License
+
+- id: license2
+  translation: This work is licensed under a
+
+- id: license3
+  translation: Creative Commons
+
+- id: license4
+  translation: International License
+
+- id: notfound
+  translation: Page not found
+
+- id: contact
+  translation: Contact
+
+- id: languages
+  translation: Languages
+
+- id: techskills
+  translation: Technical Skills
+
+- id: softskills
+  translation: Soft Skills
+
+- id: opensource
+  translation: Open Source
+
+- id: profile
+  translation: Profile
+
+- id: employment
+  translation: Employment
+
+- id: education
+  translation: Education
+
+- id: community
+  translation: Community

@@ -1,0 +1,25 @@
+{{ define "jsonLD" }}
+  <script type="application/ld+json">
+    {{ partial "blog-jsonld" . | safeJS }}
+  </script>
+{{ end }}
+
+{{ define "main" }}
+  <h1 class="text-center">Blog</h1>
+
+  {{ range .Paginator.Pages }}
+    <article>
+      <h2 class="title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+
+      {{ partial "publish" . }}
+
+      <img class="list-image" src="{{ index .Params.images 0 | safeURL }}" alt="{{ .Title }}" title="{{ .Title }}" />
+
+      {{ .Summary }}
+    </article>
+
+    <hr>
+  {{ end }}
+
+  {{ template "_internal/pagination.html" . }}
+{{ end }}
